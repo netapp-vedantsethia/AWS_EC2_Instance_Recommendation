@@ -1,0 +1,2589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="AWS Instance recommentation system based on hardware, network and performance requirements">
+    <meta name="keywords" content="AWS, EC2, Recommendation">
+    <meta name="author" content="Vedant Sethia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Instance Recommender</title>
+    <link rel="shortcut icon" href="https://cloud.netapp.com/hubfs/favicon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container ms-5 me-5 p-5">
+        <div class="col-md-6">
+            <h3 class="">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve" height="50px">
+                    <style type="text/css">
+                        .st0-aws{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#E8E8E8;}
+                        .st1-aws{fill-rule:evenodd;clip-rule:evenodd;fill:#252F3E;}
+                        .st2-aws{fill-rule:evenodd;clip-rule:evenodd;fill:#FF9900;}
+                    </style>
+                    <g>
+                        <path id="Fill-1" class="st0-aws" d="M21,1c11,0,20,9,20,20s-9,20-20,20S1,32,1,21S10,1,21,1"/>
+                        <path id="Fill-3" class="st1-aws" d="M28.8,22.1c-0.4,0-0.8,0-1.1-0.1c-0.3-0.1-0.6-0.2-0.8-0.3c-0.1,0-0.2-0.1-0.2-0.2
+                            c0-0.1,0-0.1,0-0.2v-0.4c0-0.2,0.1-0.2,0.2-0.2c0,0,0.1,0,0.1,0c0,0,0.1,0,0.2,0.1c0.3,0.1,0.5,0.2,0.8,0.3
+                            c0.3,0.1,0.6,0.1,0.9,0.1c0.4,0,0.7-0.1,1.1-0.2c0.2-0.1,0.4-0.4,0.4-0.7c0-0.2-0.1-0.4-0.2-0.5c-0.2-0.2-0.5-0.3-0.7-0.4l-1.1-0.3
+                            c-0.5-0.1-0.9-0.4-1.2-0.8c-0.2-0.3-0.4-0.7-0.4-1.1c0-0.3,0.1-0.6,0.2-0.8c0.1-0.2,0.3-0.4,0.5-0.6c0.2-0.2,0.5-0.3,0.8-0.4
+                            c0.3-0.1,0.6-0.1,0.9-0.1c0.2,0,0.3,0,0.5,0c0.2,0,0.3,0.1,0.5,0.1c0.2,0,0.3,0.1,0.4,0.1c0.1,0,0.2,0.1,0.3,0.1
+                            c0.1,0,0.2,0.1,0.2,0.2c0,0.1,0.1,0.2,0.1,0.2v0.3c0,0.2-0.1,0.2-0.2,0.2c-0.1,0-0.2,0-0.3-0.1c-0.4-0.2-0.9-0.3-1.4-0.3
+                            c-0.3,0-0.7,0.1-1,0.2c-0.2,0.1-0.4,0.4-0.3,0.7c0,0.2,0.1,0.4,0.2,0.5c0.2,0.2,0.5,0.3,0.8,0.4l1,0.3c0.4,0.1,0.8,0.4,1.1,0.7
+                            c0.2,0.3,0.3,0.7,0.3,1c0,0.3-0.1,0.6-0.2,0.9c-0.1,0.3-0.3,0.5-0.5,0.6c-0.2,0.2-0.5,0.3-0.8,0.4C29.6,22.1,29.2,22.1,28.8,22.1
+                            L28.8,22.1z M19.4,21.9c-0.1,0-0.2,0-0.3-0.1c-0.1-0.1-0.1-0.2-0.2-0.3l-1.7-5.7c0-0.1-0.1-0.2-0.1-0.3c0-0.1,0-0.2,0.1-0.2
+                            c0,0,0,0,0,0H18c0.1,0,0.2,0,0.3,0.1c0.1,0.1,0.1,0.2,0.1,0.3l1.2,4.9l1.2-4.9c0-0.1,0.1-0.2,0.1-0.3c0.1-0.1,0.2-0.1,0.3-0.1h0.6
+                            c0.1,0,0.2,0,0.3,0.1c0.1,0.1,0.1,0.2,0.1,0.3l1.2,4.9l1.3-4.9c0-0.1,0.1-0.2,0.1-0.3c0.1-0.1,0.2-0.1,0.3-0.1h0.7
+                            c0.1,0,0.2,0.1,0.2,0.1c0,0,0,0,0,0c0,0,0,0.1,0,0.1c0,0.1,0,0.1-0.1,0.2l-1.8,5.7c0,0.1-0.1,0.2-0.2,0.3c-0.1,0.1-0.2,0.1-0.3,0.1
+                            h-0.6c-0.1,0-0.2,0-0.3-0.1c-0.1-0.1-0.1-0.2-0.1-0.3l-1.1-4.8l-1.1,4.8c0,0.1-0.1,0.2-0.1,0.3c-0.1,0.1-0.2,0.1-0.3,0.1H19.4z
+                            M13.4,21.1c0.3,0,0.5,0,0.8-0.1c0.3-0.1,0.5-0.3,0.7-0.5c0.1-0.1,0.2-0.3,0.2-0.5c0.1-0.2,0.1-0.4,0.1-0.6v-0.3
+                            C15,19,14.8,19,14.5,19c-0.2,0-0.5,0-0.7,0c-0.4,0-0.8,0.1-1.1,0.3c-0.2,0.2-0.4,0.5-0.4,0.8c-0.1,0.5,0.3,1,0.8,1.1
+                            C13.3,21.1,13.4,21.1,13.4,21.1L13.4,21.1z M16.4,20c0,0.2,0,0.4,0.1,0.7c0.1,0.2,0.1,0.4,0.2,0.5c0,0,0.1,0.1,0.1,0.2
+                            c0,0.1-0.1,0.2-0.1,0.2l-0.5,0.3c-0.1,0-0.1,0.1-0.2,0.1c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.2-0.2-0.3-0.3c-0.1-0.1-0.1-0.3-0.2-0.4
+                            c-0.5,0.7-1.3,1-2.2,1c-0.5,0-1.1-0.2-1.5-0.5c-0.4-0.4-0.6-0.9-0.5-1.4c0-0.6,0.2-1.1,0.7-1.5c0.5-0.4,1.2-0.6,1.8-0.6
+                            c0.3,0,0.5,0,0.8,0.1c0.3,0,0.6,0.1,0.8,0.2v-0.5c0-0.4-0.1-0.8-0.3-1.2c-0.3-0.3-0.8-0.4-1.2-0.3c-0.3,0-0.5,0-0.8,0.1
+                            c-0.3,0.1-0.5,0.1-0.8,0.2c-0.1,0-0.2,0.1-0.3,0.1c0,0-0.1,0-0.1,0c-0.1,0-0.2-0.1-0.2-0.2v-0.4c0-0.1,0-0.2,0.1-0.3
+                            c0.1-0.1,0.1-0.1,0.2-0.2c0.3-0.1,0.6-0.3,0.9-0.3c0.4-0.1,0.8-0.1,1.1-0.1c0.7-0.1,1.4,0.2,1.9,0.6c0.4,0.5,0.7,1.2,0.6,1.8
+                            L16.4,20L16.4,20z"/>
+                        <path id="Fill-5" class="st2-aws" d="M31.2,24.5c-0.3-0.4-2.1-0.2-2.8-0.1c-0.2,0-0.3-0.2-0.1-0.3c1.4-1,3.7-0.7,3.9-0.4
+                            c0.3,0.3-0.1,2.6-1.4,3.7c-0.2,0.2-0.4,0.1-0.3-0.1C30.9,26.6,31.6,24.9,31.2,24.5 M30.2,25.7c-2.7,1.8-5.8,2.8-9,2.8
+                            c-4.1,0-8-1.5-11-4.2c-0.2-0.2,0-0.5,0.2-0.3c3.3,1.9,7.1,2.9,11,2.9c2.9,0,5.7-0.6,8.4-1.7C30.3,24.9,30.6,25.4,30.2,25.7"/>
+                    </g>
+                </svg>
+
+                AWS Instance Recommendation
+            </h3>
+            
+            <form>
+                <div class="form-group mb-2">
+                    <label for="cpu">Enter CPU:</label>
+                    <input type="number" class="form-control" id="cpu" placeholder="CPU" value="4">
+                </div>
+                <div class="form-group  mb-2">
+                    <label for="capacity">Enter Capacity:</label>
+                    <input type="number" class="form-control" id="capacity" placeholder="Capacity" value="32">
+                </div>
+                <div class="form-group  mb-2">
+                    <label for="bandwidth">Enter Bandwidth:</label>
+                    <input type="number" class="form-control" id="bandwidth" placeholder="Bandwidth" value="10">
+                </div>
+                <div class="form-group  mb-2">
+                    <label for="iops">Enter IOPS:</label>
+                    <input type="number" class="form-control" id="iops" placeholder="IOPS" value="80000">
+                </div>
+                <div class="accordion" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                           Recommender Variation Settings
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                                <div class="form-group mb-2">
+                                    <label for="cpuVariation">CPU Variation:</label>
+                                    <input type="number" class="form-control" id="cpuVariation" placeholder="CPUVariation" value="2">
+                                </div>
+                                <div class="form-group  mb-2">
+                                    <label for="capacityVariation">Capacity Variation:</label>
+                                    <input type="number" class="form-control" id="capacityVariation" placeholder="CapacityVariation" value="200">
+                                </div>
+                                <div class="form-group  mb-2">
+                                    <label for="bandwidth">Bandwidth Variation:</label>
+                                    <input type="number" class="form-control" id="bandwidthVariation" placeholder="Bandwidth" value="10">
+                                </div>
+                                <div class="form-group  mb-2">
+                                    <label for="iopsVariation">IOPS Variation:</label>
+                                    <input type="number" class="form-control" id="iopsVariation" placeholder="IOPSVariation" value="20000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary mt-2" onclick="filterJSON()">Get Recommendation</button>
+            </form>
+            
+        </div>
+        <div class="mt-4" id="result"></div>
+    </div>
+
+
+
+    <script>
+        // Sample JSON data
+        const jsonData = [
+            {
+                "InstanceType": "hpc6id.32xlarge",
+                "vCpu": "64",
+                "memory": "1024",
+                "bandwidth": "200",
+                "baselineBandwidth": "null",
+                "riops": "2146664",
+                "wiops": "1073336",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r3.large",
+                "vCpu": "2",
+                "memory": "15",
+                "bandwidth": "0",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$121.1800 monthly"
+            },
+            {
+                "InstanceType": "r3.xlarge",
+                "vCpu": "4",
+                "memory": "30.5",
+                "bandwidth": "0",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$243.0900 monthly"
+            },
+            {
+                "InstanceType": "r3.2xlarge",
+                "vCpu": "8",
+                "memory": "61",
+                "bandwidth": "0",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$485.4500 monthly"
+            },
+            {
+                "InstanceType": "r3.4xlarge",
+                "vCpu": "16",
+                "memory": "122",
+                "bandwidth": "0",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$970.9000 monthly"
+            },
+            {
+                "InstanceType": "r3.8xlarge",
+                "vCpu": "32",
+                "memory": "244",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1941.8000 monthly"
+            },
+            {
+                "InstanceType": "r4.large",
+                "vCpu": "2",
+                "memory": "15.25",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$97.0900 monthly"
+            },
+            {
+                "InstanceType": "r4.xlarge",
+                "vCpu": "4",
+                "memory": "30.5",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$194.1800 monthly"
+            },
+            {
+                "InstanceType": "r4.2xlarge",
+                "vCpu": "8",
+                "memory": "61",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$388.3600 monthly"
+            },
+            {
+                "InstanceType": "r4.4xlarge",
+                "vCpu": "16",
+                "memory": "122",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$776.7200 monthly"
+            },
+            {
+                "InstanceType": "r4.8xlarge",
+                "vCpu": "32",
+                "memory": "244",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1553.4400 monthly"
+            },
+            {
+                "InstanceType": "r4.16xlarge",
+                "vCpu": "64",
+                "memory": "488",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3106.8800 monthly"
+            },
+            {
+                "InstanceType": "r5.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$91.9800 monthly"
+            },
+            {
+                "InstanceType": "r5.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$183.9600 monthly"
+            },
+            {
+                "InstanceType": "r5.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$367.9200 monthly"
+            },
+            {
+                "InstanceType": "r5.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$735.8400 monthly"
+            },
+            {
+                "InstanceType": "r5.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1471.6800 monthly"
+            },
+            {
+                "InstanceType": "r5.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2207.5200 monthly"
+            },
+            {
+                "InstanceType": "r5.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2943.3600 monthly"
+            },
+            {
+                "InstanceType": "r5.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4415.0400 monthly"
+            },
+            {
+                "InstanceType": "r5.metal",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4415.0400 monthly"
+            },
+            {
+                "InstanceType": "r5a.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$82.4900 monthly"
+            },
+            {
+                "InstanceType": "r5a.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$164.9800 monthly"
+            },
+            {
+                "InstanceType": "r5a.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$329.9600 monthly"
+            },
+            {
+                "InstanceType": "r5a.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$659.9200 monthly"
+            },
+            {
+                "InstanceType": "r5a.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "10",
+                "baselineBandwidth": "7.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1319.8400 monthly"
+            },
+            {
+                "InstanceType": "r5a.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1979.7600 monthly"
+            },
+            {
+                "InstanceType": "r5a.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2639.6800 monthly"
+            },
+            {
+                "InstanceType": "r5a.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3959.5200 monthly"
+            },
+            {
+                "InstanceType": "r5ad.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "30000",
+                "wiops": "15000",
+                "cost": "$95.6300 monthly"
+            },
+            {
+                "InstanceType": "r5ad.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "59000",
+                "wiops": "29000",
+                "cost": "$191.2600 monthly"
+            },
+            {
+                "InstanceType": "r5ad.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "117000",
+                "wiops": "57000",
+                "cost": "$382.5200 monthly"
+            },
+            {
+                "InstanceType": "r5ad.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "234000",
+                "wiops": "114000",
+                "cost": "$765.0400 monthly"
+            },
+            {
+                "InstanceType": "r5ad.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "10",
+                "baselineBandwidth": "7.5",
+                "riops": "466666",
+                "wiops": "233333",
+                "cost": "$1530.0800 monthly"
+            },
+            {
+                "InstanceType": "r5ad.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "700000",
+                "wiops": "340000",
+                "cost": "$2295.1200 monthly"
+            },
+            {
+                "InstanceType": "r5ad.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "933333",
+                "wiops": "466666",
+                "cost": "$3060.1600 monthly"
+            },
+            {
+                "InstanceType": "r5ad.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "1400000",
+                "wiops": "680000",
+                "cost": "$4590.2400 monthly"
+            },
+            {
+                "InstanceType": "r5b.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$108.7700 monthly"
+            },
+            {
+                "InstanceType": "r5b.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$217.5400 monthly"
+            },
+            {
+                "InstanceType": "r5b.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$435.0800 monthly"
+            },
+            {
+                "InstanceType": "r5b.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$870.1600 monthly"
+            },
+            {
+                "InstanceType": "r5b.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1740.3200 monthly"
+            },
+            {
+                "InstanceType": "r5b.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2610.4800 monthly"
+            },
+            {
+                "InstanceType": "r5b.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3480.6400 monthly"
+            },
+            {
+                "InstanceType": "r5b.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5220.9600 monthly"
+            },
+            {
+                "InstanceType": "r5b.metal",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5220.9600 monthly"
+            },
+            {
+                "InstanceType": "r5d.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "30000",
+                "wiops": "15000",
+                "cost": "$105.1200 monthly"
+            },
+            {
+                "InstanceType": "r5d.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "59000",
+                "wiops": "29000",
+                "cost": "$210.2400 monthly"
+            },
+            {
+                "InstanceType": "r5d.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "117000",
+                "wiops": "57000",
+                "cost": "$420.4800 monthly"
+            },
+            {
+                "InstanceType": "r5d.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "234000",
+                "wiops": "114000",
+                "cost": "$840.9600 monthly"
+            },
+            {
+                "InstanceType": "r5d.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "466666",
+                "wiops": "233333",
+                "cost": "$1681.9200 monthly"
+            },
+            {
+                "InstanceType": "r5d.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "700000",
+                "wiops": "340000",
+                "cost": "$2522.8800 monthly"
+            },
+            {
+                "InstanceType": "r5d.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "933333",
+                "wiops": "466666",
+                "cost": "$3363.8400 monthly"
+            },
+            {
+                "InstanceType": "r5d.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "1400000",
+                "wiops": "680000",
+                "cost": "$5045.7600 monthly"
+            },
+            {
+                "InstanceType": "r5d.metal",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "1400000",
+                "wiops": "680000",
+                "cost": "$5045.7600 monthly"
+            },
+            {
+                "InstanceType": "r5dn.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "25",
+                "baselineBandwidth": "2.1",
+                "riops": "30000",
+                "wiops": "15000",
+                "cost": "$121.9100 monthly"
+            },
+            {
+                "InstanceType": "r5dn.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "25",
+                "baselineBandwidth": "4.1",
+                "riops": "59000",
+                "wiops": "29000",
+                "cost": "$243.8200 monthly"
+            },
+            {
+                "InstanceType": "r5dn.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "25",
+                "baselineBandwidth": "8.125",
+                "riops": "117000",
+                "wiops": "57000",
+                "cost": "$487.6400 monthly"
+            },
+            {
+                "InstanceType": "r5dn.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "25",
+                "baselineBandwidth": "16.25",
+                "riops": "234000",
+                "wiops": "114000",
+                "cost": "$975.2800 monthly"
+            },
+            {
+                "InstanceType": "r5dn.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "466666",
+                "wiops": "233333",
+                "cost": "$1950.5600 monthly"
+            },
+            {
+                "InstanceType": "r5dn.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "700000",
+                "wiops": "340000",
+                "cost": "$2925.8400 monthly"
+            },
+            {
+                "InstanceType": "r5dn.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "933333",
+                "wiops": "466666",
+                "cost": "$3901.1200 monthly"
+            },
+            {
+                "InstanceType": "r5dn.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "1400000",
+                "wiops": "680000",
+                "cost": "$5851.6800 monthly"
+            },
+            {
+                "InstanceType": "r5dn.metal",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "1400000",
+                "wiops": "680000",
+                "cost": "$5851.6800 monthly"
+            },
+            {
+                "InstanceType": "r5n.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "25",
+                "baselineBandwidth": "2.1",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$108.7700 monthly"
+            },
+            {
+                "InstanceType": "r5n.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "25",
+                "baselineBandwidth": "4.1",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$217.5400 monthly"
+            },
+            {
+                "InstanceType": "r5n.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "25",
+                "baselineBandwidth": "8.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$435.0800 monthly"
+            },
+            {
+                "InstanceType": "r5n.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "25",
+                "baselineBandwidth": "16.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$870.1600 monthly"
+            },
+            {
+                "InstanceType": "r5n.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1740.3200 monthly"
+            },
+            {
+                "InstanceType": "r5n.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2610.4800 monthly"
+            },
+            {
+                "InstanceType": "r5n.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3480.6400 monthly"
+            },
+            {
+                "InstanceType": "r5n.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5220.9600 monthly"
+            },
+            {
+                "InstanceType": "r5n.metal",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5220.9600 monthly"
+            },
+            {
+                "InstanceType": "r6a.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.781",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$82.7820 monthly"
+            },
+            {
+                "InstanceType": "r6a.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.562",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$165.5640 monthly"
+            },
+            {
+                "InstanceType": "r6a.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "3.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$331.1280 monthly"
+            },
+            {
+                "InstanceType": "r6a.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "6.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$662.2560 monthly"
+            },
+            {
+                "InstanceType": "r6a.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1324.5120 monthly"
+            },
+            {
+                "InstanceType": "r6a.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "18.75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1986.7680 monthly"
+            },
+            {
+                "InstanceType": "r6a.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2649.0240 monthly"
+            },
+            {
+                "InstanceType": "r6a.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "37.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3973.5360 monthly"
+            },
+            {
+                "InstanceType": "r6a.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5298.0480 monthly"
+            },
+            {
+                "InstanceType": "r6a.48xlarge",
+                "vCpu": "192",
+                "memory": "1536",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$7947.0720 monthly"
+            },
+            {
+                "InstanceType": "r6a.metal",
+                "vCpu": "192",
+                "memory": "1536",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$7947.0720 monthly"
+            },
+            {
+                "InstanceType": "r6g.medium",
+                "vCpu": "1",
+                "memory": "8",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$36.7920 monthly"
+            },
+            {
+                "InstanceType": "r6g.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$73.5840 monthly"
+            },
+            {
+                "InstanceType": "r6g.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$147.1680 monthly"
+            },
+            {
+                "InstanceType": "r6g.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$294.3360 monthly"
+            },
+            {
+                "InstanceType": "r6g.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$588.6720 monthly"
+            },
+            {
+                "InstanceType": "r6g.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1177.3440 monthly"
+            },
+            {
+                "InstanceType": "r6g.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1766.0160 monthly"
+            },
+            {
+                "InstanceType": "r6g.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2354.6880 monthly"
+            },
+            {
+                "InstanceType": "r6g.metal",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2354.6880 monthly"
+            },
+            {
+                "InstanceType": "r6gd.medium",
+                "vCpu": "1",
+                "memory": "8",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.5",
+                "riops": "13438",
+                "wiops": "5625",
+                "cost": "$42.0480 monthly"
+            },
+            {
+                "InstanceType": "r6gd.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "26875",
+                "wiops": "11250",
+                "cost": "$84.0960 monthly"
+            },
+            {
+                "InstanceType": "r6gd.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "53750",
+                "wiops": "22500",
+                "cost": "$168.1920 monthly"
+            },
+            {
+                "InstanceType": "r6gd.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "107500",
+                "wiops": "45000",
+                "cost": "$336.3840 monthly"
+            },
+            {
+                "InstanceType": "r6gd.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "215000",
+                "wiops": "90000",
+                "cost": "$672.7680 monthly"
+            },
+            {
+                "InstanceType": "r6gd.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "430000",
+                "wiops": "180000",
+                "cost": "$1345.5360 monthly"
+            },
+            {
+                "InstanceType": "r6gd.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "645000",
+                "wiops": "270000",
+                "cost": "$2018.3040 monthly"
+            },
+            {
+                "InstanceType": "r6gd.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$2691.0720 monthly"
+            },
+            {
+                "InstanceType": "r6gd.metal",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$2691.0720 monthly"
+            },
+            {
+                "InstanceType": "r6i.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.781",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$91.9800 monthly"
+            },
+            {
+                "InstanceType": "r6i.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.562",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$183.9600 monthly"
+            },
+            {
+                "InstanceType": "r6i.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "3.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$367.9200 monthly"
+            },
+            {
+                "InstanceType": "r6i.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "6.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$735.8400 monthly"
+            },
+            {
+                "InstanceType": "r6i.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1471.6800 monthly"
+            },
+            {
+                "InstanceType": "r6i.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "18.75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2207.5200 monthly"
+            },
+            {
+                "InstanceType": "r6i.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2943.3600 monthly"
+            },
+            {
+                "InstanceType": "r6i.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "37.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4415.0400 monthly"
+            },
+            {
+                "InstanceType": "r6i.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5886.7200 monthly"
+            },
+            {
+                "InstanceType": "r6i.metal",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5886.7200 monthly"
+            },
+            {
+                "InstanceType": "r6idn.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "25",
+                "baselineBandwidth": "3.125",
+                "riops": "33542",
+                "wiops": "16771",
+                "cost": "$142.6347 monthly"
+            },
+            {
+                "InstanceType": "r6idn.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "30",
+                "baselineBandwidth": "6.25",
+                "riops": "67083",
+                "wiops": "33542",
+                "cost": "$285.2694 monthly"
+            },
+            {
+                "InstanceType": "r6idn.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "40",
+                "baselineBandwidth": "12.5",
+                "riops": "134167",
+                "wiops": "67084",
+                "cost": "$570.5388 monthly"
+            },
+            {
+                "InstanceType": "r6idn.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "50",
+                "baselineBandwidth": "25",
+                "riops": "268333",
+                "wiops": "134167",
+                "cost": "$1141.0776 monthly"
+            },
+            {
+                "InstanceType": "r6idn.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "536666",
+                "wiops": "268334",
+                "cost": "$2282.1552 monthly"
+            },
+            {
+                "InstanceType": "r6idn.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "804999",
+                "wiops": "402501",
+                "cost": "$3423.2328 monthly"
+            },
+            {
+                "InstanceType": "r6idn.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "1073332",
+                "wiops": "536668",
+                "cost": "$4564.3104 monthly"
+            },
+            {
+                "InstanceType": "r6idn.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "150",
+                "baselineBandwidth": "null",
+                "riops": "1609998",
+                "wiops": "805002",
+                "cost": "$6846.4656 monthly"
+            },
+            {
+                "InstanceType": "r6idn.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "200",
+                "baselineBandwidth": "null",
+                "riops": "2146664",
+                "wiops": "1073336",
+                "cost": "$9128.6208 monthly"
+            },
+            {
+                "InstanceType": "r6idn.metal",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "200",
+                "baselineBandwidth": "null",
+                "riops": "2146664",
+                "wiops": "1073336",
+                "cost": "$9128.6208 monthly"
+            },
+            {
+                "InstanceType": "r6in.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "25",
+                "baselineBandwidth": "3.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$127.2609 monthly"
+            },
+            {
+                "InstanceType": "r6in.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "30",
+                "baselineBandwidth": "6.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$254.5218 monthly"
+            },
+            {
+                "InstanceType": "r6in.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "40",
+                "baselineBandwidth": "12.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$509.0436 monthly"
+            },
+            {
+                "InstanceType": "r6in.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "50",
+                "baselineBandwidth": "25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1018.0872 monthly"
+            },
+            {
+                "InstanceType": "r6in.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2036.1744 monthly"
+            },
+            {
+                "InstanceType": "r6in.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3054.2616 monthly"
+            },
+            {
+                "InstanceType": "r6in.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4072.3488 monthly"
+            },
+            {
+                "InstanceType": "r6in.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "150",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$6108.5232 monthly"
+            },
+            {
+                "InstanceType": "r6in.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "200",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$8144.6976 monthly"
+            },
+            {
+                "InstanceType": "r6in.metal",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "200",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$8144.6976 monthly"
+            },
+            {
+                "InstanceType": "r6id.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.781",
+                "riops": "33542",
+                "wiops": "16771",
+                "cost": "$110.3760 monthly"
+            },
+            {
+                "InstanceType": "r6id.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.562",
+                "riops": "67083",
+                "wiops": "33542",
+                "cost": "$220.7520 monthly"
+            },
+            {
+                "InstanceType": "r6id.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "3.125",
+                "riops": "134167",
+                "wiops": "67084",
+                "cost": "$441.5040 monthly"
+            },
+            {
+                "InstanceType": "r6id.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "6.25",
+                "riops": "268333",
+                "wiops": "134167",
+                "cost": "$883.0080 monthly"
+            },
+            {
+                "InstanceType": "r6id.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "null",
+                "riops": "536666",
+                "wiops": "268334",
+                "cost": "$1766.0160 monthly"
+            },
+            {
+                "InstanceType": "r6id.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "18.75",
+                "baselineBandwidth": "null",
+                "riops": "804999",
+                "wiops": "402501",
+                "cost": "$2649.0240 monthly"
+            },
+            {
+                "InstanceType": "r6id.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "1073332",
+                "wiops": "536668",
+                "cost": "$3532.0320 monthly"
+            },
+            {
+                "InstanceType": "r6id.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "37.5",
+                "baselineBandwidth": "null",
+                "riops": "1609998",
+                "wiops": "805002",
+                "cost": "$5298.0480 monthly"
+            },
+            {
+                "InstanceType": "r6id.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "2146664",
+                "wiops": "1073336",
+                "cost": "$7064.0640 monthly"
+            },
+            {
+                "InstanceType": "r6id.metal",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "3219995",
+                "wiops": "1610005",
+                "cost": "$7064.0640 monthly"
+            },
+            {
+                "InstanceType": "r7a.medium",
+                "vCpu": "1",
+                "memory": "8",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.39",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$55.5384 monthly"
+            },
+            {
+                "InstanceType": "r7a.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.781",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$111.0695 monthly"
+            },
+            {
+                "InstanceType": "r7a.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.562",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$222.1390 monthly"
+            },
+            {
+                "InstanceType": "r7a.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "3.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$444.2780 monthly"
+            },
+            {
+                "InstanceType": "r7a.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "6.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$888.5560 monthly"
+            },
+            {
+                "InstanceType": "r7a.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1777.1120 monthly"
+            },
+            {
+                "InstanceType": "r7a.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "18.75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2665.6680 monthly"
+            },
+            {
+                "InstanceType": "r7a.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3554.2240 monthly"
+            },
+            {
+                "InstanceType": "r7a.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "37.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$5331.3360 monthly"
+            },
+            {
+                "InstanceType": "r7a.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$7108.4480 monthly"
+            },
+            {
+                "InstanceType": "r7a.48xlarge",
+                "vCpu": "192",
+                "memory": "1536",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$10662.6720 monthly"
+            },
+            {
+                "InstanceType": "r7a.metal-48xl",
+                "vCpu": "192",
+                "memory": "1536",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7g.medium",
+                "vCpu": "1",
+                "memory": "8",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.52",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$39.1280 monthly"
+            },
+            {
+                "InstanceType": "r7g.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.937",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$78.1830 monthly"
+            },
+            {
+                "InstanceType": "r7g.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.876",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$156.3660 monthly"
+            },
+            {
+                "InstanceType": "r7g.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "15",
+                "baselineBandwidth": "3.75",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$312.7320 monthly"
+            },
+            {
+                "InstanceType": "r7g.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "15",
+                "baselineBandwidth": "7.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$625.4640 monthly"
+            },
+            {
+                "InstanceType": "r7g.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "15",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1250.9280 monthly"
+            },
+            {
+                "InstanceType": "r7g.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "22.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1876.3920 monthly"
+            },
+            {
+                "InstanceType": "r7g.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "30",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2501.8560 monthly"
+            },
+            {
+                "InstanceType": "r7g.metal",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "30",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2501.8560 monthly"
+            },
+            {
+                "InstanceType": "r7gd.medium",
+                "vCpu": "1",
+                "memory": "8",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.52",
+                "riops": "16771",
+                "wiops": "8385",
+                "cost": "$49.6400 monthly"
+            },
+            {
+                "InstanceType": "r7gd.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.937",
+                "riops": "33542",
+                "wiops": "16771",
+                "cost": "$99.3530 monthly"
+            },
+            {
+                "InstanceType": "r7gd.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.876",
+                "riops": "67083",
+                "wiops": "33542",
+                "cost": "$198.7060 monthly"
+            },
+            {
+                "InstanceType": "r7gd.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "15",
+                "baselineBandwidth": "3.75",
+                "riops": "134167",
+                "wiops": "67084",
+                "cost": "$397.3390 monthly"
+            },
+            {
+                "InstanceType": "r7gd.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "15",
+                "baselineBandwidth": "7.5",
+                "riops": "268333",
+                "wiops": "134167",
+                "cost": "$794.6780 monthly"
+            },
+            {
+                "InstanceType": "r7gd.8xlarge",
+                "vCpu": "32",
+                "memory": "192",
+                "bandwidth": "15",
+                "baselineBandwidth": "null",
+                "riops": "536666",
+                "wiops": "268334",
+                "cost": "$1589.4290 monthly"
+            },
+            {
+                "InstanceType": "r7gd.12xlarge",
+                "vCpu": "48",
+                "memory": "256",
+                "bandwidth": "22.5",
+                "baselineBandwidth": "null",
+                "riops": "804998",
+                "wiops": "402500",
+                "cost": "$2384.1070 monthly"
+            },
+            {
+                "InstanceType": "r7gd.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "30",
+                "baselineBandwidth": "null",
+                "riops": "1073332",
+                "wiops": "536668",
+                "cost": "$3178.8580 monthly"
+            },
+            {
+                "InstanceType": "r7i.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.781",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.562",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "3.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "6.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "18.75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.24xlarge",
+                "vCpu": "96",
+                "memory": "768",
+                "bandwidth": "37.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7i.48xlarge",
+                "vCpu": "192",
+                "memory": "1536",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "null"
+            },
+            {
+                "InstanceType": "r7iz.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "0.781",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$135.7800 monthly"
+            },
+            {
+                "InstanceType": "r7iz.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "1.562",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$271.5600 monthly"
+            },
+            {
+                "InstanceType": "r7iz.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "3.125",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$543.1200 monthly"
+            },
+            {
+                "InstanceType": "r7iz.4xlarge",
+                "vCpu": "16",
+                "memory": "128",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "6.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1086.2400 monthly"
+            },
+            {
+                "InstanceType": "r7iz.8xlarge",
+                "vCpu": "32",
+                "memory": "256",
+                "bandwidth": "12.5",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2172.4800 monthly"
+            },
+            {
+                "InstanceType": "r7iz.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3258.7200 monthly"
+            },
+            {
+                "InstanceType": "r7iz.16xlarge",
+                "vCpu": "64",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4344.9600 monthly"
+            },
+            {
+                "InstanceType": "r7iz.32xlarge",
+                "vCpu": "128",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$8689.9200 monthly"
+            },
+            {
+                "InstanceType": "u-3tb1.56xlarge",
+                "vCpu": "224",
+                "memory": "3072",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$19929.0000 monthly"
+            },
+            {
+                "InstanceType": "u-6tb1.56xlarge",
+                "vCpu": "224",
+                "memory": "6144",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$33874.8543 monthly"
+            },
+            {
+                "InstanceType": "u-6tb1.112xlarge",
+                "vCpu": "448",
+                "memory": "6144",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$39858.0000 monthly"
+            },
+            {
+                "InstanceType": "u-6tb1.metal",
+                "vCpu": "448",
+                "memory": "6144",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "unavailable"
+            },
+            {
+                "InstanceType": "u-9tb1.112xlarge",
+                "vCpu": "448",
+                "memory": "9216",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$59787.0000 monthly"
+            },
+            {
+                "InstanceType": "u-9tb1.metal",
+                "vCpu": "448",
+                "memory": "9216",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "unavailable"
+            },
+            {
+                "InstanceType": "u-12tb1.112xlarge",
+                "vCpu": "448",
+                "memory": "12288",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$79716.0000 monthly"
+            },
+            {
+                "InstanceType": "u-12tb1.metal",
+                "vCpu": "448",
+                "memory": "12288",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "unavailable"
+            },
+            {
+                "InstanceType": "u-18tb1.112xlarge",
+                "vCpu": "448",
+                "memory": "18432",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$119574.0000 monthly"
+            },
+            {
+                "InstanceType": "u-18tb1.metal",
+                "vCpu": "448",
+                "memory": "18432",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "unavailable"
+            },
+            {
+                "InstanceType": "u-24tb1.112xlarge",
+                "vCpu": "448",
+                "memory": "24576",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$159432.0000 monthly"
+            },
+            {
+                "InstanceType": "u-24tb1.metal",
+                "vCpu": "448",
+                "memory": "24576",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "unavailable"
+            },
+            {
+                "InstanceType": "x1.16xlarge",
+                "vCpu": "64",
+                "memory": "976",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4868.3700 monthly"
+            },
+            {
+                "InstanceType": "x1.32xlarge",
+                "vCpu": "128",
+                "memory": "1952",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$9736.7400 monthly"
+            },
+            {
+                "InstanceType": "x2gd.medium",
+                "vCpu": "1",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.5",
+                "riops": "13438",
+                "wiops": "5625",
+                "cost": "$60.9550 monthly"
+            },
+            {
+                "InstanceType": "x2gd.large",
+                "vCpu": "2",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "26875",
+                "wiops": "11250",
+                "cost": "$121.9100 monthly"
+            },
+            {
+                "InstanceType": "x2gd.xlarge",
+                "vCpu": "4",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "53750",
+                "wiops": "22500",
+                "cost": "$243.8200 monthly"
+            },
+            {
+                "InstanceType": "x2gd.2xlarge",
+                "vCpu": "8",
+                "memory": "128",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "107500",
+                "wiops": "45000",
+                "cost": "$487.6400 monthly"
+            },
+            {
+                "InstanceType": "x2gd.4xlarge",
+                "vCpu": "16",
+                "memory": "256",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "215000",
+                "wiops": "90000",
+                "cost": "$975.2800 monthly"
+            },
+            {
+                "InstanceType": "x2gd.8xlarge",
+                "vCpu": "32",
+                "memory": "512",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "430000",
+                "wiops": "180000",
+                "cost": "$1950.5600 monthly"
+            },
+            {
+                "InstanceType": "x2gd.12xlarge",
+                "vCpu": "48",
+                "memory": "768",
+                "bandwidth": "20",
+                "baselineBandwidth": "null",
+                "riops": "645000",
+                "wiops": "270000",
+                "cost": "$2925.8400 monthly"
+            },
+            {
+                "InstanceType": "x2gd.16xlarge",
+                "vCpu": "64",
+                "memory": "1024",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$3901.1200 monthly"
+            },
+            {
+                "InstanceType": "x2gd.metal",
+                "vCpu": "64",
+                "memory": "1024",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$3901.1200 monthly"
+            },
+            {
+                "InstanceType": "x2idn.16xlarge",
+                "vCpu": "64",
+                "memory": "1024",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "430000",
+                "wiops": "180000",
+                "cost": "$4868.3700 monthly"
+            },
+            {
+                "InstanceType": "x2idn.24xlarge",
+                "vCpu": "96",
+                "memory": "1536",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "645000",
+                "wiops": "270000",
+                "cost": "$7302.5550 monthly"
+            },
+            {
+                "InstanceType": "x2idn.32xlarge",
+                "vCpu": "128",
+                "memory": "2048",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$9736.7400 monthly"
+            },
+            {
+                "InstanceType": "x2idn.metal",
+                "vCpu": "128",
+                "memory": "2048",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$9736.7400 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.xlarge",
+                "vCpu": "4",
+                "memory": "128",
+                "bandwidth": "25",
+                "baselineBandwidth": "1.875",
+                "riops": "26875",
+                "wiops": "11250",
+                "cost": "$608.5499 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.2xlarge",
+                "vCpu": "8",
+                "memory": "256",
+                "bandwidth": "25",
+                "baselineBandwidth": "5",
+                "riops": "53750",
+                "wiops": "22500",
+                "cost": "$1217.0925 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.4xlarge",
+                "vCpu": "16",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "12.5",
+                "riops": "107500",
+                "wiops": "45000",
+                "cost": "$2434.1850 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.8xlarge",
+                "vCpu": "32",
+                "memory": "1024",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "215000",
+                "wiops": "90000",
+                "cost": "$4868.3700 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.16xlarge",
+                "vCpu": "64",
+                "memory": "2048",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "430000",
+                "wiops": "180000",
+                "cost": "$9736.7400 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.24xlarge",
+                "vCpu": "96",
+                "memory": "3072",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "645000",
+                "wiops": "270000",
+                "cost": "$14605.1100 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.32xlarge",
+                "vCpu": "128",
+                "memory": "4096",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$19473.4800 monthly"
+            },
+            {
+                "InstanceType": "x2iedn.metal",
+                "vCpu": "128",
+                "memory": "4096",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "860000",
+                "wiops": "360000",
+                "cost": "$19473.4800 monthly"
+            },
+            {
+                "InstanceType": "x2iezn.2xlarge",
+                "vCpu": "8",
+                "memory": "256",
+                "bandwidth": "25",
+                "baselineBandwidth": "12.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1217.6400 monthly"
+            },
+            {
+                "InstanceType": "x2iezn.4xlarge",
+                "vCpu": "16",
+                "memory": "512",
+                "bandwidth": "25",
+                "baselineBandwidth": "15",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2435.2800 monthly"
+            },
+            {
+                "InstanceType": "x2iezn.6xlarge",
+                "vCpu": "24",
+                "memory": "768",
+                "bandwidth": "50",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$3652.9200 monthly"
+            },
+            {
+                "InstanceType": "x2iezn.8xlarge",
+                "vCpu": "32",
+                "memory": "1024",
+                "bandwidth": "75",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4870.5600 monthly"
+            },
+            {
+                "InstanceType": "x2iezn.12xlarge",
+                "vCpu": "48",
+                "memory": "1536",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$7305.8400 monthly"
+            },
+            {
+                "InstanceType": "x2iezn.metal",
+                "vCpu": "48",
+                "memory": "1536",
+                "bandwidth": "100",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$7305.8400 monthly"
+            },
+            {
+                "InstanceType": "x1e.xlarge",
+                "vCpu": "4",
+                "memory": "122",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.625",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$608.8200 monthly"
+            },
+            {
+                "InstanceType": "x1e.2xlarge",
+                "vCpu": "8",
+                "memory": "244",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$1217.6400 monthly"
+            },
+            {
+                "InstanceType": "x1e.4xlarge",
+                "vCpu": "16",
+                "memory": "488",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$2435.2800 monthly"
+            },
+            {
+                "InstanceType": "x1e.8xlarge",
+                "vCpu": "32",
+                "memory": "976",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$4870.5600 monthly"
+            },
+            {
+                "InstanceType": "x1e.16xlarge",
+                "vCpu": "64",
+                "memory": "1952",
+                "bandwidth": "10",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$9741.1200 monthly"
+            },
+            {
+                "InstanceType": "x1e.32xlarge",
+                "vCpu": "128",
+                "memory": "3904",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "null",
+                "wiops": "null",
+                "cost": "$19482.2400 monthly"
+            },
+            {
+                "InstanceType": "z1d.large",
+                "vCpu": "2",
+                "memory": "16",
+                "bandwidth": "10",
+                "baselineBandwidth": "0.75",
+                "riops": "30000",
+                "wiops": "15000",
+                "cost": "$135.7800 monthly"
+            },
+            {
+                "InstanceType": "z1d.xlarge",
+                "vCpu": "4",
+                "memory": "32",
+                "bandwidth": "10",
+                "baselineBandwidth": "1.25",
+                "riops": "59000",
+                "wiops": "29000",
+                "cost": "$271.5600 monthly"
+            },
+            {
+                "InstanceType": "z1d.2xlarge",
+                "vCpu": "8",
+                "memory": "64",
+                "bandwidth": "10",
+                "baselineBandwidth": "2.5",
+                "riops": "117000",
+                "wiops": "57000",
+                "cost": "$543.1200 monthly"
+            },
+            {
+                "InstanceType": "z1d.3xlarge",
+                "vCpu": "12",
+                "memory": "96",
+                "bandwidth": "10",
+                "baselineBandwidth": "5",
+                "riops": "175000",
+                "wiops": "75000",
+                "cost": "$814.6800 monthly"
+            },
+            {
+                "InstanceType": "z1d.6xlarge",
+                "vCpu": "24",
+                "memory": "192",
+                "bandwidth": "12",
+                "baselineBandwidth": "null",
+                "riops": "350000",
+                "wiops": "170000",
+                "cost": "$1629.3600 monthly"
+            },
+            {
+                "InstanceType": "z1d.12xlarge",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "700000",
+                "wiops": "340000",
+                "cost": "$3258.7200 monthly"
+            },
+            {
+                "InstanceType": "z1d.metal",
+                "vCpu": "48",
+                "memory": "384",
+                "bandwidth": "25",
+                "baselineBandwidth": "null",
+                "riops": "700000",
+                "wiops": "340000",
+                "cost": "$3258.7200 monthly"
+            }
+        ];
+       
+        function filterJSON() {
+            const cpuValue = parseInt(document.getElementById("cpu").value);
+            const capacityValue = parseInt(document.getElementById("capacity").value);
+            const bandwidthValue = parseInt(document.getElementById("bandwidth").value);
+            const iopsValue = parseInt(document.getElementById("iops").value);
+
+            const cpuValueVariation = parseInt(document.getElementById("cpuVariation").value);
+            const capacityValueVariation = parseInt(document.getElementById("capacityVariation").value);
+            const bandwidthValueVariation = parseInt(document.getElementById("bandwidthVariation").value);
+            const iopsValueVariation = parseInt(document.getElementById("iopsVariation").value);
+
+            const filteredData = jsonData.filter(item => {
+                if(item.riops == "null" || item.wiops == null) {
+                    return (
+                        Math.abs(item.vCpu - cpuValue) <= cpuValueVariation &&
+                        Math.abs(item.memory - capacityValue) <= capacityValueVariation && 
+                        Math.abs(item.bandwidth - bandwidthValue) <= bandwidthValueVariation
+                    );
+                } else{
+                    return (
+                        Math.abs(item.vCpu - cpuValue) <= cpuValueVariation &&
+                        Math.abs(item.memory - capacityValue) <= capacityValueVariation && 
+                        Math.abs(item.bandwidth - bandwidthValue) <= bandwidthValueVariation &&
+                        Math.abs(item.riops + item.wiops - iopsValue) <= iopsValueVariation
+                    );
+                }
+                
+            });
+
+            displayResult(filteredData);
+        }
+
+        function displayResult(data) {
+            const resultContainer = document.getElementById("result");
+            resultContainer.innerHTML = "";
+
+            if (data.length === 0) {
+                resultContainer.textContent = "No matching data found.";
+            } else {
+                const resultList = document.createElement("ul");
+                data.forEach(item => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `Instance Type: ${item.InstanceType},  vCpu: ${item.vCpu},  Capacity: ${item.memory},  Bandwidth: ${item.bandwidth},  Cost: ${item.cost}`;
+                    resultList.appendChild(listItem);
+                });
+                resultContainer.appendChild(resultList);
+            }
+        }
+    </script>
+</body>
+</html>

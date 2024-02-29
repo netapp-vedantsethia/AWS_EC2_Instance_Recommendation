@@ -1,0 +1,2422 @@
+[
+    {
+        "Instance type": "hpc6id.32xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "200",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "2146664",
+        "Write IOPS": "1073336",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r3.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "15",
+        "Bandwidth": "0",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$121.1800 monthly"
+    },
+    {
+        "Instance type": "r3.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "30.5",
+        "Bandwidth": "0",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$243.0900 monthly"
+    },
+    {
+        "Instance type": "r3.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "61",
+        "Bandwidth": "0",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$485.4500 monthly"
+    },
+    {
+        "Instance type": "r3.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "122",
+        "Bandwidth": "0",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$970.9000 monthly"
+    },
+    {
+        "Instance type": "r3.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "244",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1941.8000 monthly"
+    },
+    {
+        "Instance type": "r4.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "15.25",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$97.0900 monthly"
+    },
+    {
+        "Instance type": "r4.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "30.5",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$194.1800 monthly"
+    },
+    {
+        "Instance type": "r4.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "61",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$388.3600 monthly"
+    },
+    {
+        "Instance type": "r4.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "122",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$776.7200 monthly"
+    },
+    {
+        "Instance type": "r4.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "244",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1553.4400 monthly"
+    },
+    {
+        "Instance type": "r4.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "488",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3106.8800 monthly"
+    },
+    {
+        "Instance type": "r5.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$91.9800 monthly"
+    },
+    {
+        "Instance type": "r5.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$183.9600 monthly"
+    },
+    {
+        "Instance type": "r5.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$367.9200 monthly"
+    },
+    {
+        "Instance type": "r5.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$735.8400 monthly"
+    },
+    {
+        "Instance type": "r5.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1471.6800 monthly"
+    },
+    {
+        "Instance type": "r5.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2207.5200 monthly"
+    },
+    {
+        "Instance type": "r5.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2943.3600 monthly"
+    },
+    {
+        "Instance type": "r5.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4415.0400 monthly"
+    },
+    {
+        "Instance type": "r5.metal",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4415.0400 monthly"
+    },
+    {
+        "Instance type": "r5a.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$82.4900 monthly"
+    },
+    {
+        "Instance type": "r5a.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$164.9800 monthly"
+    },
+    {
+        "Instance type": "r5a.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$329.9600 monthly"
+    },
+    {
+        "Instance type": "r5a.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$659.9200 monthly"
+    },
+    {
+        "Instance type": "r5a.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "7.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1319.8400 monthly"
+    },
+    {
+        "Instance type": "r5a.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1979.7600 monthly"
+    },
+    {
+        "Instance type": "r5a.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2639.6800 monthly"
+    },
+    {
+        "Instance type": "r5a.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3959.5200 monthly"
+    },
+    {
+        "Instance type": "r5ad.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "30000",
+        "Write IOPS": "15000",
+        "Cost": "$95.6300 monthly"
+    },
+    {
+        "Instance type": "r5ad.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "59000",
+        "Write IOPS": "29000",
+        "Cost": "$191.2600 monthly"
+    },
+    {
+        "Instance type": "r5ad.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "117000",
+        "Write IOPS": "57000",
+        "Cost": "$382.5200 monthly"
+    },
+    {
+        "Instance type": "r5ad.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "234000",
+        "Write IOPS": "114000",
+        "Cost": "$765.0400 monthly"
+    },
+    {
+        "Instance type": "r5ad.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "7.5",
+        "Read IOPS": "466666",
+        "Write IOPS": "233333",
+        "Cost": "$1530.0800 monthly"
+    },
+    {
+        "Instance type": "r5ad.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "700000",
+        "Write IOPS": "340000",
+        "Cost": "$2295.1200 monthly"
+    },
+    {
+        "Instance type": "r5ad.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "933333",
+        "Write IOPS": "466666",
+        "Cost": "$3060.1600 monthly"
+    },
+    {
+        "Instance type": "r5ad.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1400000",
+        "Write IOPS": "680000",
+        "Cost": "$4590.2400 monthly"
+    },
+    {
+        "Instance type": "r5b.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$108.7700 monthly"
+    },
+    {
+        "Instance type": "r5b.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$217.5400 monthly"
+    },
+    {
+        "Instance type": "r5b.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$435.0800 monthly"
+    },
+    {
+        "Instance type": "r5b.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$870.1600 monthly"
+    },
+    {
+        "Instance type": "r5b.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1740.3200 monthly"
+    },
+    {
+        "Instance type": "r5b.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2610.4800 monthly"
+    },
+    {
+        "Instance type": "r5b.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3480.6400 monthly"
+    },
+    {
+        "Instance type": "r5b.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5220.9600 monthly"
+    },
+    {
+        "Instance type": "r5b.metal",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5220.9600 monthly"
+    },
+    {
+        "Instance type": "r5d.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "30000",
+        "Write IOPS": "15000",
+        "Cost": "$105.1200 monthly"
+    },
+    {
+        "Instance type": "r5d.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "59000",
+        "Write IOPS": "29000",
+        "Cost": "$210.2400 monthly"
+    },
+    {
+        "Instance type": "r5d.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "117000",
+        "Write IOPS": "57000",
+        "Cost": "$420.4800 monthly"
+    },
+    {
+        "Instance type": "r5d.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "234000",
+        "Write IOPS": "114000",
+        "Cost": "$840.9600 monthly"
+    },
+    {
+        "Instance type": "r5d.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "466666",
+        "Write IOPS": "233333",
+        "Cost": "$1681.9200 monthly"
+    },
+    {
+        "Instance type": "r5d.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "700000",
+        "Write IOPS": "340000",
+        "Cost": "$2522.8800 monthly"
+    },
+    {
+        "Instance type": "r5d.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "933333",
+        "Write IOPS": "466666",
+        "Cost": "$3363.8400 monthly"
+    },
+    {
+        "Instance type": "r5d.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1400000",
+        "Write IOPS": "680000",
+        "Cost": "$5045.7600 monthly"
+    },
+    {
+        "Instance type": "r5d.metal",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1400000",
+        "Write IOPS": "680000",
+        "Cost": "$5045.7600 monthly"
+    },
+    {
+        "Instance type": "r5dn.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "2.1",
+        "Read IOPS": "30000",
+        "Write IOPS": "15000",
+        "Cost": "$121.9100 monthly"
+    },
+    {
+        "Instance type": "r5dn.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "4.1",
+        "Read IOPS": "59000",
+        "Write IOPS": "29000",
+        "Cost": "$243.8200 monthly"
+    },
+    {
+        "Instance type": "r5dn.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "8.125",
+        "Read IOPS": "117000",
+        "Write IOPS": "57000",
+        "Cost": "$487.6400 monthly"
+    },
+    {
+        "Instance type": "r5dn.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "16.25",
+        "Read IOPS": "234000",
+        "Write IOPS": "114000",
+        "Cost": "$975.2800 monthly"
+    },
+    {
+        "Instance type": "r5dn.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "466666",
+        "Write IOPS": "233333",
+        "Cost": "$1950.5600 monthly"
+    },
+    {
+        "Instance type": "r5dn.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "700000",
+        "Write IOPS": "340000",
+        "Cost": "$2925.8400 monthly"
+    },
+    {
+        "Instance type": "r5dn.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "933333",
+        "Write IOPS": "466666",
+        "Cost": "$3901.1200 monthly"
+    },
+    {
+        "Instance type": "r5dn.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1400000",
+        "Write IOPS": "680000",
+        "Cost": "$5851.6800 monthly"
+    },
+    {
+        "Instance type": "r5dn.metal",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1400000",
+        "Write IOPS": "680000",
+        "Cost": "$5851.6800 monthly"
+    },
+    {
+        "Instance type": "r5n.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "2.1",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$108.7700 monthly"
+    },
+    {
+        "Instance type": "r5n.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "4.1",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$217.5400 monthly"
+    },
+    {
+        "Instance type": "r5n.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "8.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$435.0800 monthly"
+    },
+    {
+        "Instance type": "r5n.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "16.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$870.1600 monthly"
+    },
+    {
+        "Instance type": "r5n.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1740.3200 monthly"
+    },
+    {
+        "Instance type": "r5n.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2610.4800 monthly"
+    },
+    {
+        "Instance type": "r5n.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3480.6400 monthly"
+    },
+    {
+        "Instance type": "r5n.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5220.9600 monthly"
+    },
+    {
+        "Instance type": "r5n.metal",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5220.9600 monthly"
+    },
+    {
+        "Instance type": "r6a.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.781",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$82.7820 monthly"
+    },
+    {
+        "Instance type": "r6a.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.562",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$165.5640 monthly"
+    },
+    {
+        "Instance type": "r6a.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$331.1280 monthly"
+    },
+    {
+        "Instance type": "r6a.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$662.2560 monthly"
+    },
+    {
+        "Instance type": "r6a.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1324.5120 monthly"
+    },
+    {
+        "Instance type": "r6a.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "18.75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1986.7680 monthly"
+    },
+    {
+        "Instance type": "r6a.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2649.0240 monthly"
+    },
+    {
+        "Instance type": "r6a.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "37.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3973.5360 monthly"
+    },
+    {
+        "Instance type": "r6a.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5298.0480 monthly"
+    },
+    {
+        "Instance type": "r6a.48xlarge",
+        "Default vCPUs": "192",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$7947.0720 monthly"
+    },
+    {
+        "Instance type": "r6a.metal",
+        "Default vCPUs": "192",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$7947.0720 monthly"
+    },
+    {
+        "Instance type": "r6g.medium",
+        "Default vCPUs": "1",
+        "Memory (GiB)": "8",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$36.7920 monthly"
+    },
+    {
+        "Instance type": "r6g.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$73.5840 monthly"
+    },
+    {
+        "Instance type": "r6g.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$147.1680 monthly"
+    },
+    {
+        "Instance type": "r6g.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$294.3360 monthly"
+    },
+    {
+        "Instance type": "r6g.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$588.6720 monthly"
+    },
+    {
+        "Instance type": "r6g.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1177.3440 monthly"
+    },
+    {
+        "Instance type": "r6g.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1766.0160 monthly"
+    },
+    {
+        "Instance type": "r6g.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2354.6880 monthly"
+    },
+    {
+        "Instance type": "r6g.metal",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2354.6880 monthly"
+    },
+    {
+        "Instance type": "r6gd.medium",
+        "Default vCPUs": "1",
+        "Memory (GiB)": "8",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.5",
+        "Read IOPS": "13438",
+        "Write IOPS": "5625",
+        "Cost": "$42.0480 monthly"
+    },
+    {
+        "Instance type": "r6gd.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "26875",
+        "Write IOPS": "11250",
+        "Cost": "$84.0960 monthly"
+    },
+    {
+        "Instance type": "r6gd.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "53750",
+        "Write IOPS": "22500",
+        "Cost": "$168.1920 monthly"
+    },
+    {
+        "Instance type": "r6gd.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "107500",
+        "Write IOPS": "45000",
+        "Cost": "$336.3840 monthly"
+    },
+    {
+        "Instance type": "r6gd.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "215000",
+        "Write IOPS": "90000",
+        "Cost": "$672.7680 monthly"
+    },
+    {
+        "Instance type": "r6gd.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "430000",
+        "Write IOPS": "180000",
+        "Cost": "$1345.5360 monthly"
+    },
+    {
+        "Instance type": "r6gd.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "645000",
+        "Write IOPS": "270000",
+        "Cost": "$2018.3040 monthly"
+    },
+    {
+        "Instance type": "r6gd.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$2691.0720 monthly"
+    },
+    {
+        "Instance type": "r6gd.metal",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$2691.0720 monthly"
+    },
+    {
+        "Instance type": "r6i.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.781",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$91.9800 monthly"
+    },
+    {
+        "Instance type": "r6i.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.562",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$183.9600 monthly"
+    },
+    {
+        "Instance type": "r6i.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$367.9200 monthly"
+    },
+    {
+        "Instance type": "r6i.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$735.8400 monthly"
+    },
+    {
+        "Instance type": "r6i.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1471.6800 monthly"
+    },
+    {
+        "Instance type": "r6i.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "18.75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2207.5200 monthly"
+    },
+    {
+        "Instance type": "r6i.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2943.3600 monthly"
+    },
+    {
+        "Instance type": "r6i.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "37.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4415.0400 monthly"
+    },
+    {
+        "Instance type": "r6i.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5886.7200 monthly"
+    },
+    {
+        "Instance type": "r6i.metal",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5886.7200 monthly"
+    },
+    {
+        "Instance type": "r6idn.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "33542",
+        "Write IOPS": "16771",
+        "Cost": "$142.6347 monthly"
+    },
+    {
+        "Instance type": "r6idn.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "30",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "67083",
+        "Write IOPS": "33542",
+        "Cost": "$285.2694 monthly"
+    },
+    {
+        "Instance type": "r6idn.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "40",
+        "Baseline Bandwidth": "12.5",
+        "Read IOPS": "134167",
+        "Write IOPS": "67084",
+        "Cost": "$570.5388 monthly"
+    },
+    {
+        "Instance type": "r6idn.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "25",
+        "Read IOPS": "268333",
+        "Write IOPS": "134167",
+        "Cost": "$1141.0776 monthly"
+    },
+    {
+        "Instance type": "r6idn.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "536666",
+        "Write IOPS": "268334",
+        "Cost": "$2282.1552 monthly"
+    },
+    {
+        "Instance type": "r6idn.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "804999",
+        "Write IOPS": "402501",
+        "Cost": "$3423.2328 monthly"
+    },
+    {
+        "Instance type": "r6idn.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1073332",
+        "Write IOPS": "536668",
+        "Cost": "$4564.3104 monthly"
+    },
+    {
+        "Instance type": "r6idn.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "150",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1609998",
+        "Write IOPS": "805002",
+        "Cost": "$6846.4656 monthly"
+    },
+    {
+        "Instance type": "r6idn.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "200",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "2146664",
+        "Write IOPS": "1073336",
+        "Cost": "$9128.6208 monthly"
+    },
+    {
+        "Instance type": "r6idn.metal",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "200",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "2146664",
+        "Write IOPS": "1073336",
+        "Cost": "$9128.6208 monthly"
+    },
+    {
+        "Instance type": "r6in.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$127.2609 monthly"
+    },
+    {
+        "Instance type": "r6in.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "30",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$254.5218 monthly"
+    },
+    {
+        "Instance type": "r6in.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "40",
+        "Baseline Bandwidth": "12.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$509.0436 monthly"
+    },
+    {
+        "Instance type": "r6in.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1018.0872 monthly"
+    },
+    {
+        "Instance type": "r6in.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2036.1744 monthly"
+    },
+    {
+        "Instance type": "r6in.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3054.2616 monthly"
+    },
+    {
+        "Instance type": "r6in.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4072.3488 monthly"
+    },
+    {
+        "Instance type": "r6in.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "150",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$6108.5232 monthly"
+    },
+    {
+        "Instance type": "r6in.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "200",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$8144.6976 monthly"
+    },
+    {
+        "Instance type": "r6in.metal",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "200",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$8144.6976 monthly"
+    },
+    {
+        "Instance type": "r6id.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.781",
+        "Read IOPS": "33542",
+        "Write IOPS": "16771",
+        "Cost": "$110.3760 monthly"
+    },
+    {
+        "Instance type": "r6id.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.562",
+        "Read IOPS": "67083",
+        "Write IOPS": "33542",
+        "Cost": "$220.7520 monthly"
+    },
+    {
+        "Instance type": "r6id.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "134167",
+        "Write IOPS": "67084",
+        "Cost": "$441.5040 monthly"
+    },
+    {
+        "Instance type": "r6id.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "268333",
+        "Write IOPS": "134167",
+        "Cost": "$883.0080 monthly"
+    },
+    {
+        "Instance type": "r6id.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "536666",
+        "Write IOPS": "268334",
+        "Cost": "$1766.0160 monthly"
+    },
+    {
+        "Instance type": "r6id.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "18.75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "804999",
+        "Write IOPS": "402501",
+        "Cost": "$2649.0240 monthly"
+    },
+    {
+        "Instance type": "r6id.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1073332",
+        "Write IOPS": "536668",
+        "Cost": "$3532.0320 monthly"
+    },
+    {
+        "Instance type": "r6id.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "37.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1609998",
+        "Write IOPS": "805002",
+        "Cost": "$5298.0480 monthly"
+    },
+    {
+        "Instance type": "r6id.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "2146664",
+        "Write IOPS": "1073336",
+        "Cost": "$7064.0640 monthly"
+    },
+    {
+        "Instance type": "r6id.metal",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "3219995",
+        "Write IOPS": "1610005",
+        "Cost": "$7064.0640 monthly"
+    },
+    {
+        "Instance type": "r7a.medium",
+        "Default vCPUs": "1",
+        "Memory (GiB)": "8",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.39",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$55.5384 monthly"
+    },
+    {
+        "Instance type": "r7a.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.781",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$111.0695 monthly"
+    },
+    {
+        "Instance type": "r7a.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.562",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$222.1390 monthly"
+    },
+    {
+        "Instance type": "r7a.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$444.2780 monthly"
+    },
+    {
+        "Instance type": "r7a.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$888.5560 monthly"
+    },
+    {
+        "Instance type": "r7a.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1777.1120 monthly"
+    },
+    {
+        "Instance type": "r7a.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "18.75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2665.6680 monthly"
+    },
+    {
+        "Instance type": "r7a.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3554.2240 monthly"
+    },
+    {
+        "Instance type": "r7a.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "37.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$5331.3360 monthly"
+    },
+    {
+        "Instance type": "r7a.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$7108.4480 monthly"
+    },
+    {
+        "Instance type": "r7a.48xlarge",
+        "Default vCPUs": "192",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$10662.6720 monthly"
+    },
+    {
+        "Instance type": "r7a.metal-48xl",
+        "Default vCPUs": "192",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7g.medium",
+        "Default vCPUs": "1",
+        "Memory (GiB)": "8",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.52",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$39.1280 monthly"
+    },
+    {
+        "Instance type": "r7g.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.937",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$78.1830 monthly"
+    },
+    {
+        "Instance type": "r7g.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.876",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$156.3660 monthly"
+    },
+    {
+        "Instance type": "r7g.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "15",
+        "Baseline Bandwidth": "3.75",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$312.7320 monthly"
+    },
+    {
+        "Instance type": "r7g.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "15",
+        "Baseline Bandwidth": "7.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$625.4640 monthly"
+    },
+    {
+        "Instance type": "r7g.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "15",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1250.9280 monthly"
+    },
+    {
+        "Instance type": "r7g.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "22.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1876.3920 monthly"
+    },
+    {
+        "Instance type": "r7g.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "30",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2501.8560 monthly"
+    },
+    {
+        "Instance type": "r7g.metal",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "30",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2501.8560 monthly"
+    },
+    {
+        "Instance type": "r7gd.medium",
+        "Default vCPUs": "1",
+        "Memory (GiB)": "8",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.52",
+        "Read IOPS": "16771",
+        "Write IOPS": "8385",
+        "Cost": "$49.6400 monthly"
+    },
+    {
+        "Instance type": "r7gd.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.937",
+        "Read IOPS": "33542",
+        "Write IOPS": "16771",
+        "Cost": "$99.3530 monthly"
+    },
+    {
+        "Instance type": "r7gd.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.876",
+        "Read IOPS": "67083",
+        "Write IOPS": "33542",
+        "Cost": "$198.7060 monthly"
+    },
+    {
+        "Instance type": "r7gd.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "15",
+        "Baseline Bandwidth": "3.75",
+        "Read IOPS": "134167",
+        "Write IOPS": "67084",
+        "Cost": "$397.3390 monthly"
+    },
+    {
+        "Instance type": "r7gd.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "15",
+        "Baseline Bandwidth": "7.5",
+        "Read IOPS": "268333",
+        "Write IOPS": "134167",
+        "Cost": "$794.6780 monthly"
+    },
+    {
+        "Instance type": "r7gd.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "192",
+        "Bandwidth": "15",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "536666",
+        "Write IOPS": "268334",
+        "Cost": "$1589.4290 monthly"
+    },
+    {
+        "Instance type": "r7gd.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "256",
+        "Bandwidth": "22.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "804998",
+        "Write IOPS": "402500",
+        "Cost": "$2384.1070 monthly"
+    },
+    {
+        "Instance type": "r7gd.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "30",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "1073332",
+        "Write IOPS": "536668",
+        "Cost": "$3178.8580 monthly"
+    },
+    {
+        "Instance type": "r7i.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.781",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.562",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "18.75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "768",
+        "Bandwidth": "37.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7i.48xlarge",
+        "Default vCPUs": "192",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "null"
+    },
+    {
+        "Instance type": "r7iz.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "0.781",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$135.7800 monthly"
+    },
+    {
+        "Instance type": "r7iz.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "1.562",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$271.5600 monthly"
+    },
+    {
+        "Instance type": "r7iz.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "3.125",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$543.1200 monthly"
+    },
+    {
+        "Instance type": "r7iz.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "128",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "6.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1086.2400 monthly"
+    },
+    {
+        "Instance type": "r7iz.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "256",
+        "Bandwidth": "12.5",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2172.4800 monthly"
+    },
+    {
+        "Instance type": "r7iz.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3258.7200 monthly"
+    },
+    {
+        "Instance type": "r7iz.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4344.9600 monthly"
+    },
+    {
+        "Instance type": "r7iz.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$8689.9200 monthly"
+    },
+    {
+        "Instance type": "u-3tb1.56xlarge",
+        "Default vCPUs": "224",
+        "Memory (GiB)": "3072",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$19929.0000 monthly"
+    },
+    {
+        "Instance type": "u-6tb1.56xlarge",
+        "Default vCPUs": "224",
+        "Memory (GiB)": "6144",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$33874.8543 monthly"
+    },
+    {
+        "Instance type": "u-6tb1.112xlarge",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "6144",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$39858.0000 monthly"
+    },
+    {
+        "Instance type": "u-6tb1.metal",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "6144",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "unavailable"
+    },
+    {
+        "Instance type": "u-9tb1.112xlarge",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "9216",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$59787.0000 monthly"
+    },
+    {
+        "Instance type": "u-9tb1.metal",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "9216",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "unavailable"
+    },
+    {
+        "Instance type": "u-12tb1.112xlarge",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "12288",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$79716.0000 monthly"
+    },
+    {
+        "Instance type": "u-12tb1.metal",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "12288",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "unavailable"
+    },
+    {
+        "Instance type": "u-18tb1.112xlarge",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "18432",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$119574.0000 monthly"
+    },
+    {
+        "Instance type": "u-18tb1.metal",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "18432",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "unavailable"
+    },
+    {
+        "Instance type": "u-24tb1.112xlarge",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "24576",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$159432.0000 monthly"
+    },
+    {
+        "Instance type": "u-24tb1.metal",
+        "Default vCPUs": "448",
+        "Memory (GiB)": "24576",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "unavailable"
+    },
+    {
+        "Instance type": "x1.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "976",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4868.3700 monthly"
+    },
+    {
+        "Instance type": "x1.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "1952",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$9736.7400 monthly"
+    },
+    {
+        "Instance type": "x2gd.medium",
+        "Default vCPUs": "1",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.5",
+        "Read IOPS": "13438",
+        "Write IOPS": "5625",
+        "Cost": "$60.9550 monthly"
+    },
+    {
+        "Instance type": "x2gd.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "26875",
+        "Write IOPS": "11250",
+        "Cost": "$121.9100 monthly"
+    },
+    {
+        "Instance type": "x2gd.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "53750",
+        "Write IOPS": "22500",
+        "Cost": "$243.8200 monthly"
+    },
+    {
+        "Instance type": "x2gd.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "128",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "107500",
+        "Write IOPS": "45000",
+        "Cost": "$487.6400 monthly"
+    },
+    {
+        "Instance type": "x2gd.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "256",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "215000",
+        "Write IOPS": "90000",
+        "Cost": "$975.2800 monthly"
+    },
+    {
+        "Instance type": "x2gd.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "512",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "430000",
+        "Write IOPS": "180000",
+        "Cost": "$1950.5600 monthly"
+    },
+    {
+        "Instance type": "x2gd.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "768",
+        "Bandwidth": "20",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "645000",
+        "Write IOPS": "270000",
+        "Cost": "$2925.8400 monthly"
+    },
+    {
+        "Instance type": "x2gd.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$3901.1200 monthly"
+    },
+    {
+        "Instance type": "x2gd.metal",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$3901.1200 monthly"
+    },
+    {
+        "Instance type": "x2idn.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "430000",
+        "Write IOPS": "180000",
+        "Cost": "$4868.3700 monthly"
+    },
+    {
+        "Instance type": "x2idn.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "645000",
+        "Write IOPS": "270000",
+        "Cost": "$7302.5550 monthly"
+    },
+    {
+        "Instance type": "x2idn.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "2048",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$9736.7400 monthly"
+    },
+    {
+        "Instance type": "x2idn.metal",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "2048",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$9736.7400 monthly"
+    },
+    {
+        "Instance type": "x2iedn.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "128",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "1.875",
+        "Read IOPS": "26875",
+        "Write IOPS": "11250",
+        "Cost": "$608.5499 monthly"
+    },
+    {
+        "Instance type": "x2iedn.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "256",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "53750",
+        "Write IOPS": "22500",
+        "Cost": "$1217.0925 monthly"
+    },
+    {
+        "Instance type": "x2iedn.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "12.5",
+        "Read IOPS": "107500",
+        "Write IOPS": "45000",
+        "Cost": "$2434.1850 monthly"
+    },
+    {
+        "Instance type": "x2iedn.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "215000",
+        "Write IOPS": "90000",
+        "Cost": "$4868.3700 monthly"
+    },
+    {
+        "Instance type": "x2iedn.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "2048",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "430000",
+        "Write IOPS": "180000",
+        "Cost": "$9736.7400 monthly"
+    },
+    {
+        "Instance type": "x2iedn.24xlarge",
+        "Default vCPUs": "96",
+        "Memory (GiB)": "3072",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "645000",
+        "Write IOPS": "270000",
+        "Cost": "$14605.1100 monthly"
+    },
+    {
+        "Instance type": "x2iedn.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "4096",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$19473.4800 monthly"
+    },
+    {
+        "Instance type": "x2iedn.metal",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "4096",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "860000",
+        "Write IOPS": "360000",
+        "Cost": "$19473.4800 monthly"
+    },
+    {
+        "Instance type": "x2iezn.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "256",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "12.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1217.6400 monthly"
+    },
+    {
+        "Instance type": "x2iezn.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "512",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "15",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2435.2800 monthly"
+    },
+    {
+        "Instance type": "x2iezn.6xlarge",
+        "Default vCPUs": "24",
+        "Memory (GiB)": "768",
+        "Bandwidth": "50",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$3652.9200 monthly"
+    },
+    {
+        "Instance type": "x2iezn.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "1024",
+        "Bandwidth": "75",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4870.5600 monthly"
+    },
+    {
+        "Instance type": "x2iezn.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$7305.8400 monthly"
+    },
+    {
+        "Instance type": "x2iezn.metal",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "1536",
+        "Bandwidth": "100",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$7305.8400 monthly"
+    },
+    {
+        "Instance type": "x1e.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "122",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.625",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$608.8200 monthly"
+    },
+    {
+        "Instance type": "x1e.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "244",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$1217.6400 monthly"
+    },
+    {
+        "Instance type": "x1e.4xlarge",
+        "Default vCPUs": "16",
+        "Memory (GiB)": "488",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$2435.2800 monthly"
+    },
+    {
+        "Instance type": "x1e.8xlarge",
+        "Default vCPUs": "32",
+        "Memory (GiB)": "976",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$4870.5600 monthly"
+    },
+    {
+        "Instance type": "x1e.16xlarge",
+        "Default vCPUs": "64",
+        "Memory (GiB)": "1952",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$9741.1200 monthly"
+    },
+    {
+        "Instance type": "x1e.32xlarge",
+        "Default vCPUs": "128",
+        "Memory (GiB)": "3904",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "null",
+        "Write IOPS": "null",
+        "Cost": "$19482.2400 monthly"
+    },
+    {
+        "Instance type": "z1d.large",
+        "Default vCPUs": "2",
+        "Memory (GiB)": "16",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "0.75",
+        "Read IOPS": "30000",
+        "Write IOPS": "15000",
+        "Cost": "$135.7800 monthly"
+    },
+    {
+        "Instance type": "z1d.xlarge",
+        "Default vCPUs": "4",
+        "Memory (GiB)": "32",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "1.25",
+        "Read IOPS": "59000",
+        "Write IOPS": "29000",
+        "Cost": "$271.5600 monthly"
+    },
+    {
+        "Instance type": "z1d.2xlarge",
+        "Default vCPUs": "8",
+        "Memory (GiB)": "64",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "2.5",
+        "Read IOPS": "117000",
+        "Write IOPS": "57000",
+        "Cost": "$543.1200 monthly"
+    },
+    {
+        "Instance type": "z1d.3xlarge",
+        "Default vCPUs": "12",
+        "Memory (GiB)": "96",
+        "Bandwidth": "10",
+        "Baseline Bandwidth": "5",
+        "Read IOPS": "175000",
+        "Write IOPS": "75000",
+        "Cost": "$814.6800 monthly"
+    },
+    {
+        "Instance type": "z1d.6xlarge",
+        "Default vCPUs": "24",
+        "Memory (GiB)": "192",
+        "Bandwidth": "12",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "350000",
+        "Write IOPS": "170000",
+        "Cost": "$1629.3600 monthly"
+    },
+    {
+        "Instance type": "z1d.12xlarge",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "700000",
+        "Write IOPS": "340000",
+        "Cost": "$3258.7200 monthly"
+    },
+    {
+        "Instance type": "z1d.metal",
+        "Default vCPUs": "48",
+        "Memory (GiB)": "384",
+        "Bandwidth": "25",
+        "Baseline Bandwidth": "null",
+        "Read IOPS": "700000",
+        "Write IOPS": "340000",
+        "Cost": "$3258.7200 monthly"
+    }
+]
